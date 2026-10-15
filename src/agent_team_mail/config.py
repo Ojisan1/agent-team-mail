@@ -83,9 +83,11 @@ class Settings:
         if not sent_folder:
             raise ConfigError("SENT_FOLDER cannot be empty")
 
-        team = tuple(dict.fromkeys(_email(value, "TEAM_ADDRESSES") for value in _csv(
-            "TEAM_ADDRESSES", required=True
-        )))
+        team = tuple(
+            dict.fromkeys(
+                _email(value, "TEAM_ADDRESSES") for value in _csv("TEAM_ADDRESSES", required=True)
+            )
+        )
         allowed_hosts = _csv("ALLOWED_HOSTS")
 
         return cls(

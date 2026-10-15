@@ -60,8 +60,7 @@ def test_environment_overrides_dotenv(
 ) -> None:
     env_file = tmp_path / "mail.env"
     env_file.write_text(
-        "\n".join(f"{key}={value}" for key, value in REQUIRED.items())
-        + "\nPORT=9000\n",
+        "\n".join(f"{key}={value}" for key, value in REQUIRED.items()) + "\nPORT=9000\n",
         encoding="utf-8",
     )
     monkeypatch.setenv("PORT", "8765")
