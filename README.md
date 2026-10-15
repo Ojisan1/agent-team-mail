@@ -31,7 +31,7 @@ This is a guardrail, not a complete security boundary. Run it with a dedicated m
 Python 3.11 or newer is required.
 
 ```bash
-git clone https://github.com/example/agent-team-mail.git
+git clone https://github.com/Ojisan1/agent-team-mail.git
 cd agent-team-mail
 python -m venv .venv
 . .venv/bin/activate

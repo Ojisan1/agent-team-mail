@@ -34,8 +34,8 @@ dev = [
 agent-team-mail = "agent_team_mail.server:main"
 
 [project.urls]
-Homepage = "https://github.com/example/agent-team-mail"
-Issues = "https://github.com/example/agent-team-mail/issues"
+Homepage = "https://github.com/Ojisan1/agent-team-mail"
+Issues = "https://github.com/Ojisan1/agent-team-mail/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/agent_team_mail"]
