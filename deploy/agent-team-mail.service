@@ -1,0 +1,27 @@
+[Unit]
+Description=Locked-down MCP email server for AI agents
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=agent-team-mail
+Group=agent-team-mail
+WorkingDirectory=/opt/agent-team-mail
+EnvironmentFile=/etc/agent-team-mail/agent-team-mail.env
+ExecStart=/opt/agent-team-mail/.venv/bin/agent-team-mail --transport http
+Restart=on-failure
+RestartSec=5s
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+[Install]
+WantedBy=multi-user.target
